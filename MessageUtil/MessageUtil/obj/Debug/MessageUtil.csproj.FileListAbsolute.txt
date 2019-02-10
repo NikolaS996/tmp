@@ -1,0 +1,6 @@
+C:\Users\komp\source\repos\MessageMicroservice\MessageUtil\MessageUtil\bin\Debug\MessageUtil.dll
+C:\Users\komp\source\repos\MessageMicroservice\MessageUtil\MessageUtil\bin\Debug\MessageUtil.pdb
+C:\Users\komp\source\repos\MessageMicroservice\MessageUtil\MessageUtil\obj\Debug\MessageUtil.csprojAssemblyReference.cache
+C:\Users\komp\source\repos\MessageMicroservice\MessageUtil\MessageUtil\obj\Debug\MessageUtil.csproj.CoreCompileInputs.cache
+C:\Users\komp\source\repos\MessageMicroservice\MessageUtil\MessageUtil\obj\Debug\MessageUtil.dll
+C:\Users\komp\source\repos\MessageMicroservice\MessageUtil\MessageUtil\obj\Debug\MessageUtil.pdb
