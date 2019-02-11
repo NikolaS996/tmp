@@ -77,9 +77,61 @@ namespace MessageMicroservice.DataAccess
                         {
                             retVal = ReadRow(reader);
                         }
+                         
                     }
                 }
                 return retVal; //Vracanje popunjenog modela (ukoliko je trazeni korisnik u bazi)
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static Message CreateMessage(Message message)
+        {
+            try
+            {
+                int id = 0;
+                using (SqlConnection connection = new SqlConnection(DBFunctions.ConnectionString))
+                {
+                    //Kreiranje SQL komande nad datom konekcijom i dodavanje SQL-a koji ce se izvrsiti nad bazom
+                    SqlCommand command = connection.CreateCommand();
+                    command.CommandText = String.Format(@"
+                        INSERT INTO poruka(vreme, tekst, id_kanala, id_ucesnik)
+						values(@vreme, @tekst, @id_kanala, @id_ucesnik)
+						set @Id = SCOPE_IDENTITY();
+                        select @Id as Id
+                    ");
+                    //unutar upita, ispod values:
+                    //set @Id = SCOPE_IDENTITY();
+                    //select @Id as Id
+
+                    //Dodavanje parametara u SQL. Metoda AddParameter se nalazi u Util projektu.
+                    //command.Parameters.Add("@Id", SqlDbType.Int, message.id_poruke);
+                    command.Parameters.Add("id", message.id_poruke);
+                    command.Parameters.Add("@vreme", message.vreme);
+                    command.Parameters.Add("@tekst", message.tekst);
+                    command.Parameters.Add("@id_kanala", message.id_kanala);
+                    command.Parameters.Add("@id_ucesnik", message.id_ucesnik);
+
+
+                    //Otvaranje konekcije nad bazom
+                    connection.Open();
+                    //id = (int)command.ExecuteScalar();
+                    //return GetMessageById(id);
+
+                    ////Izvrsavanje SQL komande i vracanje podataka iz baze
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        //Provera da li su podaci vraceni i popunjavanje modela uz pomoc metode ReadRow
+                        if (reader.Read())
+                        {
+                            id = (int)reader["Id"];
+                        }
+                    }
+                }
+                return GetMessageById(id);
             }
             catch (Exception ex)
             {

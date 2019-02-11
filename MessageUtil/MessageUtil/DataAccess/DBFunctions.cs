@@ -23,7 +23,6 @@ namespace MessageUtil.DataAccess
         //                                        "Connection Timeout=120;";
         public static string ConnectionString = "Data Source=147.91.175.176;" +
                                                 "Initial Catalog=it49g2015;" +
-                                                "Trusted_Connection = True;" +
                                                 "Persist Security Info=True;" +
                                                 "User ID=it49g2015;" +
                                                 "Password=ftnftn2015;" +
