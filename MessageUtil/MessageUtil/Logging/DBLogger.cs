@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MessageUtil.DataAccess;
 
-namespace Util.Logger
+namespace MessageUtil.Logging
 {
     public class DBLogger : LogBase
     {

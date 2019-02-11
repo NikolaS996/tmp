@@ -1,5 +1,7 @@
 ﻿using MessageMicroservice.Models;
 using MessageUtil.DataAccess;
+using MessageUtil.Logging;
+using MessageUtil;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -42,11 +44,11 @@ namespace MessageMicroservice.DataAccess
         //Metoda koja obradjuje zahtev za vracanje korisnika iz baze po ID-ju
         public static Message GetMessageById(int messageID) //Ulazni parametar je ID koji je prosledjen u samoj ruti
         {
+            //Kreiranje praznog modela
+            Message retVal = new Message();
+
             try
             {
-                //Kreiranje praznog modela
-                Message retVal = new Message();
-
                 //Kreiranje konekcije na osnovu connection string-a iz Web.config-a
                 using (SqlConnection connection = new SqlConnection(DBFunctions.ConnectionString)) 
                 {
@@ -68,6 +70,7 @@ namespace MessageMicroservice.DataAccess
 
                     //Otvaranje konekcije nad bazom
                     connection.Open();
+                    
 
                     //Izvrsavanje SQL komande i vracanje podataka iz baze
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -80,12 +83,15 @@ namespace MessageMicroservice.DataAccess
                          
                     }
                 }
-                return retVal; //Vracanje popunjenog modela (ukoliko je trazeni korisnik u bazi)
+                
             }
             catch (Exception ex)
             {
-                throw ex;
+                //Log exception here
+                LogHelper.LogException(LogTarget.File, ex, DataFormatUtil.GetFormatedLongDateTimeString(DateTime.Now));
             }
+
+            return retVal; //Vracanje popunjenog modela (ukoliko je trazeni korisnik u bazi)
         }
 
         public static List<Message> GetAllMessages()
@@ -121,19 +127,22 @@ namespace MessageMicroservice.DataAccess
                         }
                     }
                 }
-                return retMessages; //Vracanje popunjenog modela
             }
             catch (Exception ex)
             {
-                throw ex;
+                //Log exception here
+                LogHelper.LogException(LogTarget.File, ex, DataFormatUtil.GetFormatedLongDateTimeString(DateTime.Now));
             }
+
+            return retMessages; //Vracanje popunjenog modela
         }
 
         public static Message CreateMessage(Message message)
         {
+            int id = 0;
+
             try
             {
-                int id = 0;
                 using (SqlConnection connection = new SqlConnection(DBFunctions.ConnectionString))
                 {
                     //Kreiranje SQL komande nad datom konekcijom i dodavanje SQL-a koji ce se izvrsiti nad bazom
@@ -144,12 +153,8 @@ namespace MessageMicroservice.DataAccess
 						set @Id = SCOPE_IDENTITY();
                         select @Id as Id
                     ");
-                    //unutar upita, ispod values:
-                    //set @Id = SCOPE_IDENTITY();
-                    //select @Id as Id
 
                     //Dodavanje parametara u SQL. Metoda AddParameter se nalazi u Util projektu.
-                    //command.Parameters.Add("@Id", SqlDbType.Int, message.id_poruke);
                     command.Parameters.Add("id", message.id_poruke);
                     command.Parameters.Add("@vreme", message.vreme);
                     command.Parameters.Add("@tekst", message.tekst);
@@ -172,20 +177,24 @@ namespace MessageMicroservice.DataAccess
                         }
                     }
                 }
-                return GetMessageById(id);
             }
             catch (Exception ex)
             {
-                throw ex;
+                //Log exception here
+                LogHelper.LogException(LogTarget.File, ex, DataFormatUtil.GetFormatedLongDateTimeString(DateTime.Now));
             }
+        
+            return GetMessageById(id);
         }
 
         public static bool DeleteUser(int id)
         {
+            //Kreiranje praznog modela
+            Message retVal = new Message();
+
             try
             {
-                //Kreiranje praznog modela
-                Message retVal = new Message();
+                
 
                 //Kreiranje konekcije na osnovu connection string-a iz Web.config-a
                 using (SqlConnection connection = new SqlConnection(DBFunctions.ConnectionString))
@@ -208,18 +217,17 @@ namespace MessageMicroservice.DataAccess
                     {
                         return false;
                     }
-                    else
-                    {
-                        return true;
-                    }
 
                 }
 
             }
             catch (Exception ex)
             {
-                throw ex;
+                //Log exception here
+                LogHelper.LogException(LogTarget.File, ex, DataFormatUtil.GetFormatedLongDateTimeString(DateTime.Now));
             }
+
+            return true;
         }
     }
 }

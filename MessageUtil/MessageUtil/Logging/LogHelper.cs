@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Util.Logger
+namespace MessageUtil.Logging
 {
     public static class LogHelper
     {
@@ -14,8 +14,7 @@ namespace Util.Logger
             switch (target)
             {
                 case LogTarget.File:
-                    logger = new FileLogger();
-                    logger.Log(message, timestamp);
+                    FileLogger.Instance.Log(message, timestamp);
                     break;
                 case LogTarget.Database:
                     logger = new DBLogger();
@@ -24,6 +23,29 @@ namespace Util.Logger
                 case LogTarget.EventLog:
                     logger = new EventLogger();
                     logger.Log(message, timestamp);
+                    break;
+                default:
+                    return;
+            }
+        }
+
+        //Method for logging Exceptions is purposely put separated here so it can be modified depending 
+        //on the desired way for ExceptionLogging
+        public static void LogException(LogTarget target, Exception ex, string timestamp)
+        {
+            switch (target)
+            {
+                case LogTarget.File:
+                    {
+                        //Only File Logger is working for now but this is a good base for extension
+                        //So this is the only ExceptionLogger that will be implemented
+                        string content = String.Format("!![Exception]: {0}", ex.StackTrace);
+                        FileLogger.Instance.Log(content, timestamp);
+                        break;
+                    }
+                case LogTarget.Database:
+                    break;
+                case LogTarget.EventLog:
                     break;
                 default:
                     return;
