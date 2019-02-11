@@ -42,10 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\DBFunctions.cs" />
+    <Compile Include="Logging\DBLogger.cs" />
+    <Compile Include="Logging\EventLogger.cs" />
+    <Compile Include="Logging\FileLogger.cs" />
+    <Compile Include="Logging\LogBase.cs" />
+    <Compile Include="Logging\LogHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Logging\" />
     <Folder Include="Response\" />
     <Folder Include="Testing\" />
   </ItemGroup>

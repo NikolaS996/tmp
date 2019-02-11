@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using Util.Logger;
 
 namespace MessageMicroservice.Controllers
 {
@@ -21,11 +22,12 @@ namespace MessageMicroservice.Controllers
         [Route("api/message/{id}"), HttpGet]
         public IHttpActionResult GetMessage(int id)
         {
+           
             Message poruka = MessageDB.GetMessageById(id);
 
             if (poruka == null)
                 return BadRequest();
-            Console.WriteLine("cao");
+            LogHelper.Log(LogTarget.File, poruka.ToString(), DateTime.Now.ToString());
             return Ok(poruka);
         }
 
