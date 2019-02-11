@@ -58,7 +58,7 @@ namespace MessageMicroservice.DataAccess
                         SELECT
                             {0}
                         FROM
-                            [poruka]
+                            [porukasema.poruka]
                         WHERE
                             [id_poruke] = @Id
                     ", AllColumnSelect);
@@ -110,7 +110,7 @@ namespace MessageMicroservice.DataAccess
                         SELECT
                             {0}
                         FROM
-                            [poruka]
+                            [porukasema.poruka]
                     ", AllColumnSelect);
                    
                     //Otvaranje konekcije nad bazom
@@ -148,7 +148,7 @@ namespace MessageMicroservice.DataAccess
                     //Kreiranje SQL komande nad datom konekcijom i dodavanje SQL-a koji ce se izvrsiti nad bazom
                     SqlCommand command = connection.CreateCommand();
                     command.CommandText = String.Format(@"
-                        INSERT INTO poruka(vreme, tekst, id_kanala, id_ucesnik)
+                        INSERT INTO porukasema.poruka(vreme, tekst, id_kanala, id_ucesnik)
 						values(@vreme, @tekst, @id_kanala, @id_ucesnik)
 						set @Id = SCOPE_IDENTITY();
                         select @Id as Id
@@ -202,7 +202,7 @@ namespace MessageMicroservice.DataAccess
                     //Kreiranje SQL komande nad datom konekcijom i dodavanje SQL-a koji ce se izvrsiti nad bazom
                     SqlCommand command = connection.CreateCommand();
                     command.CommandText = String.Format(@"
-                    DELETE FROM poruka WHERE id_poruke = @Id
+                    DELETE FROM porukasema.poruka WHERE id_poruke = @Id
                     ");
 
                     //Dodavanje parametara u SQL. Metoda AddParameter se nalazi u Util projektu.
