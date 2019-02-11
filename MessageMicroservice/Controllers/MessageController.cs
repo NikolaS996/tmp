@@ -12,9 +12,14 @@ namespace MessageMicroservice.Controllers
 {
     public class MessageController : ApiController
     {
+        [Route("api/message"), HttpGet]
         public IEnumerable<Message> GetAllMessages()
         {
             List<Message> lista = new List<Message>();
+
+            lista = MessageDB.GetAllMessages();
+            if (lista == null)
+                BadRequest();
 
             return lista;
         }
@@ -38,6 +43,17 @@ namespace MessageMicroservice.Controllers
             if ((result) == null)
                 return BadRequest();
             return Ok(result);
+        }
+
+        [Route("api/message/{id}"), HttpDelete]
+        public IHttpActionResult DeleteMessage(int id)
+        {
+            bool result = MessageDB.DeleteUser(id);
+
+            if (!result)
+                return BadRequest();
+
+            return Ok();
         }
 
     }

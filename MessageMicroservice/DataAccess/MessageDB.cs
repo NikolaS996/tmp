@@ -88,6 +88,47 @@ namespace MessageMicroservice.DataAccess
             }
         }
 
+        public static List<Message> GetAllMessages()
+        {
+            //Kreiranje prazne liste
+            List<Message> retMessages = new List<Message>();
+
+            try
+            {
+                //Kreiranje konekcije na osnovu connection string-a iz Web.config-a
+                using (SqlConnection connection = new SqlConnection(DBFunctions.ConnectionString))
+                {
+                    //Kreiranje SQL komande nad datom konekcijom i dodavanje SQL-a koji ce se izvrsiti nad bazom
+                    SqlCommand command = connection.CreateCommand();
+                    command.CommandText = String.Format(@"
+                        SELECT
+                            {0}
+                        FROM
+                            [poruka]
+                    ", AllColumnSelect);
+                   
+                    //Otvaranje konekcije nad bazom
+                    connection.Open();
+
+                    //Izvrsavanje SQL komande i vracanje podataka iz baze
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        //Provera da li su podaci vraceni i popunjavanje modela uz pomoc metode ReadRow
+                        while(reader.Read())
+                        {
+                            Message message = ReadRow(reader);
+                            retMessages.Add(message);
+                        }
+                    }
+                }
+                return retMessages; //Vracanje popunjenog modela
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public static Message CreateMessage(Message message)
         {
             try
@@ -132,6 +173,48 @@ namespace MessageMicroservice.DataAccess
                     }
                 }
                 return GetMessageById(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static bool DeleteUser(int id)
+        {
+            try
+            {
+                //Kreiranje praznog modela
+                Message retVal = new Message();
+
+                //Kreiranje konekcije na osnovu connection string-a iz Web.config-a
+                using (SqlConnection connection = new SqlConnection(DBFunctions.ConnectionString))
+                {
+                    //Kreiranje SQL komande nad datom konekcijom i dodavanje SQL-a koji ce se izvrsiti nad bazom
+                    SqlCommand command = connection.CreateCommand();
+                    command.CommandText = String.Format(@"
+                    DELETE FROM poruka WHERE id_poruke = @Id
+                    ");
+
+                    //Dodavanje parametara u SQL. Metoda AddParameter se nalazi u Util projektu.
+                    command.Parameters.Add("@Id", id);
+
+                    //Otvaranje konekcije nad bazom
+                    connection.Open();
+
+                    //Izvrsavanje SQL komande i vracanje broja dobijenih redova
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected != 1)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+
+                }
+
             }
             catch (Exception ex)
             {
