@@ -64,3 +64,7 @@ C:\Users\komp\source\repos\MessageMicroservice\MessageMicroservice\obj\Debug\Mes
 C:\Users\komp\source\repos\MessageMicroservice\MessageMicroservice\obj\Debug\MessageMicroservice.pdb
 C:\Users\komp\source\repos\MessageMicroservice\MessageMicroservice\bin\MessageUtil.dll
 C:\Users\komp\source\repos\MessageMicroservice\MessageMicroservice\bin\MessageUtil.pdb
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice\obj\Debug\MessageMicroservice.csprojAssemblyReference.cache
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice\obj\Debug\MessageMicroservice.csproj.CoreCompileInputs.cache
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice\obj\Debug\MessageMicroservice.dll
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice\obj\Debug\MessageMicroservice.pdb

@@ -24,3 +24,29 @@ C:\Users\komp\source\repos\MessageMicroservice\MessageMicroservice.Tests\obj\Deb
 C:\Users\komp\source\repos\MessageMicroservice\MessageMicroservice.Tests\obj\Debug\MessageMicroservice.Tests.csproj.CopyComplete
 C:\Users\komp\source\repos\MessageMicroservice\MessageMicroservice.Tests\obj\Debug\MessageMicroservice.Tests.dll
 C:\Users\komp\source\repos\MessageMicroservice\MessageMicroservice.Tests\obj\Debug\MessageMicroservice.Tests.pdb
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\MessageMicroservice.Tests.dll
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\MessageMicroservice.Tests.pdb
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\MessageMicroservice.dll
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\System.Web.Http.dll
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\System.Web.Http.WebHost.dll
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\MessageUtil.dll
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\System.Net.Http.Formatting.dll
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\Newtonsoft.Json.dll
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\MessageMicroservice.pdb
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\MessageMicroservice.dll.config
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\System.Web.Http.xml
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\System.Web.Http.WebHost.xml
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\MessageUtil.pdb
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\bin\Debug\System.Net.Http.Formatting.xml
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\obj\Debug\MessageMicroservice.Tests.csprojAssemblyReference.cache
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\obj\Debug\MessageMicroservice.Tests.csproj.CoreCompileInputs.cache
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\obj\Debug\MessageMicroservice.Tests.csproj.CopyComplete
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\obj\Debug\MessageMicroservice.Tests.dll
+D:\test commita\IT49g2015_G4_M6\MessageMicroservice.Tests\obj\Debug\MessageMicroservice.Tests.pdb

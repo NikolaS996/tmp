@@ -88,7 +88,7 @@ namespace MessageMicroservice.DataAccess
             catch (Exception ex)
             {
                 //Log exception here
-                LogHelper.LogException(LogTarget.File, ex, DataFormatUtil.GetFormatedLongDateTimeString(DateTime.Now));
+                //LogHelper.LogException(LogTarget.File, ex, DataFormatUtil.GetFormatedLongDateTimeString(DateTime.Now));
             }
 
             return retVal; //Vracanje popunjenog modela (ukoliko je trazeni korisnik u bazi)
@@ -131,7 +131,7 @@ namespace MessageMicroservice.DataAccess
             catch (Exception ex)
             {
                 //Log exception here
-                LogHelper.LogException(LogTarget.File, ex, DataFormatUtil.GetFormatedLongDateTimeString(DateTime.Now));
+                //LogHelper.LogException(LogTarget.File, ex, DataFormatUtil.GetFormatedLongDateTimeString(DateTime.Now));
             }
 
             return retMessages; //Vracanje popunjenog modela
@@ -181,7 +181,7 @@ namespace MessageMicroservice.DataAccess
             catch (Exception ex)
             {
                 //Log exception here
-                LogHelper.LogException(LogTarget.File, ex, DataFormatUtil.GetFormatedLongDateTimeString(DateTime.Now));
+                //LogHelper.LogException(LogTarget.File, ex, DataFormatUtil.GetFormatedLongDateTimeString(DateTime.Now));
             }
         
             return GetMessageById(id);
@@ -224,7 +224,7 @@ namespace MessageMicroservice.DataAccess
             catch (Exception ex)
             {
                 //Log exception here
-                LogHelper.LogException(LogTarget.File, ex, DataFormatUtil.GetFormatedLongDateTimeString(DateTime.Now));
+                //LogHelper.LogException(LogTarget.File, ex, DataFormatUtil.GetFormatedLongDateTimeString(DateTime.Now));
             }
 
             return true;

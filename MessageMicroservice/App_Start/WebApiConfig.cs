@@ -27,7 +27,7 @@ namespace MessageMicroservice
                 .Add(new MediaTypeHeaderValue("text/html"));
 
             //Configuring Logger from Util class library
-            config.MessageHandlers.Add(new LogRequestAndResponseHandler());
+            //config.MessageHandlers.Add(new LogRequestAndResponseHandler());
         }
     }
 }

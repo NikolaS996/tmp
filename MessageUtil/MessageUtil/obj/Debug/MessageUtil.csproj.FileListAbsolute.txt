@@ -4,3 +4,9 @@ C:\Users\komp\source\repos\MessageMicroservice\MessageUtil\MessageUtil\obj\Debug
 C:\Users\komp\source\repos\MessageMicroservice\MessageUtil\MessageUtil\obj\Debug\MessageUtil.csproj.CoreCompileInputs.cache
 C:\Users\komp\source\repos\MessageMicroservice\MessageUtil\MessageUtil\obj\Debug\MessageUtil.dll
 C:\Users\komp\source\repos\MessageMicroservice\MessageUtil\MessageUtil\obj\Debug\MessageUtil.pdb
+D:\test commita\IT49g2015_G4_M6\MessageUtil\MessageUtil\bin\Debug\MessageUtil.dll
+D:\test commita\IT49g2015_G4_M6\MessageUtil\MessageUtil\bin\Debug\MessageUtil.pdb
+D:\test commita\IT49g2015_G4_M6\MessageUtil\MessageUtil\obj\Debug\MessageUtil.csprojAssemblyReference.cache
+D:\test commita\IT49g2015_G4_M6\MessageUtil\MessageUtil\obj\Debug\MessageUtil.csproj.CoreCompileInputs.cache
+D:\test commita\IT49g2015_G4_M6\MessageUtil\MessageUtil\obj\Debug\MessageUtil.dll
+D:\test commita\IT49g2015_G4_M6\MessageUtil\MessageUtil\obj\Debug\MessageUtil.pdb
